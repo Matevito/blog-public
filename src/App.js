@@ -1,9 +1,17 @@
+import { BrowserRouter , Routes, Route } from "react-router-dom";
+
+//todo routes
+import Home from "./routes/Home"
+
+//todo api fromcomponents
 
 function App() {
   return (
-    <div className="App">
-      hello,public blog!
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path= "/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
