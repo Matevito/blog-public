@@ -1,16 +1,23 @@
 import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { Container } from "@mui/material";
 
 //todo routes
-import Home from "./routes/Home"
+import Header from "./Header";
+import Footer from "./Footer";
+import Home from "./routes/Home";
 
 //todo api fromcomponents
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path= "/" element={<Home />} />
-      </Routes>
+      <Container maxWidth="lg">
+        <Header />
+        <Routes>
+          <Route exact path= "/" element={<Home />} />
+        </Routes>
+      </Container>
+      <Footer />
     </BrowserRouter>
   );
 }
