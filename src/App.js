@@ -8,16 +8,18 @@ import Home from "./routes/Home";
 
 //todo api fromcomponents
 
+const title = "Disgreciones de un tirano"
+
 function App() {
   return (
     <BrowserRouter>
       <Container maxWidth="lg">
-        <Header />
+        <Header title={title}/>
         <Routes>
           <Route exact path= "/" element={<Home />} />
         </Routes>
       </Container>
-      <Footer />
+      <Footer title={title}/>
     </BrowserRouter>
   );
 }

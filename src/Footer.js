@@ -1,7 +1,6 @@
 import { Box, Container,Typography, Link } from "@mui/material"
 
-const title = "Disgraciones de un tirano"
-const description = "Articulos sobre programación, desarrollo web, café o cualquier opinion literaria o filosofica que se me ocurra."
+const description = "Articulos sobre programación, desarrollo web, café o cualquier opinion literaria, filosofica que se me ocurra."
 
 const Copyrigth = () => {
     return (
@@ -17,7 +16,7 @@ const Copyrigth = () => {
 }
 
 
-const Footer = () => {
+const Footer = ({ title }) => {
     return (
         <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
             <Container maxWidth="lg">
