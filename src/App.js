@@ -1,14 +1,15 @@
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 import { Container } from "@mui/material";
 
-//todo routes
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./routes/Home";
+import Article from "./routes/Article";
+import AuthorInfo from "./routes/AuthorInfo";
+import About from "./routes/About";
 
-//todo api fromcomponents
-
-const title = "Disgreciones de un tirano"
+// title of the article
+const title = "Entremeses apolineos"
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Header title={title}/>
         <Routes>
           <Route exact path= "/" element={<Home />} />
+          <Route path="/article/:id" element={<Article />}/>
+          <Route path="/author/:id" element={<AuthorInfo />}/>
+          <Route path="/about" element={<About />}/>
         </Routes>
       </Container>
       <Footer title={title}/>
