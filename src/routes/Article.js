@@ -8,6 +8,7 @@ const Article = () => {
     const [comments, setComments] = useState();
     useEffect(() => {
         getArticle();
+        getComments();
     }, [])
 
     const getArticle = async () => {
@@ -20,7 +21,12 @@ const Article = () => {
         }
     }
     const getComments = async () => {
-        //todo:
+        try {
+            const commentsResponse = await api.get(`/post/${id}/comment/list`)
+            setComments(commentsResponse.data.data)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
