@@ -13,7 +13,6 @@ const Home = () => {
         try {
             const articlesList = await api.get("/post/list")
             setArticles(articlesList.data.data)
-            console.log(articlesList.data.data)
         } catch (err) {
             console.log(err)
             setArticles([])

@@ -9,7 +9,7 @@ import AuthorInfo from "./routes/AuthorInfo";
 import About from "./routes/About";
 
 // title of the article
-const title = "Entremeses apolineos"
+const title = "Cuarto de los mil espejos"
 
 function App() {
   return (

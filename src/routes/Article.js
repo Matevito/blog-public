@@ -12,8 +12,7 @@ const Article = () => {
     const [comments, setComments] = useState();
 
     useEffect(() => {
-        getArticle();
-        getComments();
+        refreshData()
     }, [])
 
     const getArticle = async () => {
@@ -37,10 +36,23 @@ const Article = () => {
         }
     }
 
-    const publishComment = () => {
-        //todo:
-        // api route: `/post/${id}/comment`, { message:check the name! }
+    const refreshData = () => {
+        getArticle()
+        getComments();
     }
+
+    const publishComment = async (comment) => {
+        try {
+            // 1. post the comment on the database
+            const publishedResponse = await api.post(`/post/${id}/comment`, comment);
+            console.log(publishedResponse.data)
+            // 2. refreshComments
+            refreshData();
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     if (!article && !comments) {
         return (
             <div>Loading info...</div>
@@ -53,13 +65,12 @@ const Article = () => {
                                 marginTop:2,
                                 mx:"auto",
                                 display:"flex",
-                                flexDirection:"column",
+                                flexDirection:"column"
                             }}
                 >
                 <DisplayedArticle article={article}/>
                 <Divider />
-                <p></p>
-                <CommentSection comments={comments}/>
+                <CommentSection comments={comments} publishComment={publishComment}/>
                 </Box>
             </Grid>
         )
