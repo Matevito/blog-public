@@ -2,6 +2,22 @@ import { useNavigate } from "react-router-dom";
 import { Grid, Typography, Link } from  "@mui/material"
 import parseDate from "./parseDate";
 
+const InjectArticle = ({ articleText }) => {
+    if (!articleText) {
+        return (
+            <>Loading article...</>
+        )
+    } else {
+        return (
+            <div
+                contentEditable="true"
+                dangerouslySetInnerHTML={{ __html: articleText}}
+            >
+            </div>
+        )
+    }
+} 
+
 const DisplayedArticle = ({ article }) => {
     const title = article.title;
     const timeStamp = parseDate(article.timeStamp);
@@ -38,17 +54,10 @@ const DisplayedArticle = ({ article }) => {
                     navigateToAuthor();
                 }}
             >
-            {author.username}
-            </Link>
+                    {author.username}
+                </Link>
             </Typography>
-
-            
-
-            <div>
-                {articleContent}
-            </div>
-            <div>
-            </div>
+            <InjectArticle articleText={articleContent} />
         </Grid>
     )
 }
