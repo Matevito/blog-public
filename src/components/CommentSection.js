@@ -4,23 +4,8 @@ import CommentPaper from "./CommentPaper";
 
 const CommentSection = (props) => {
     const publishComment = props.publishComment;
-    //const comments = props.comments
+    const comments = props.comments
 
-    // testing comments
-    const comments = [
-        {
-            id:1, 
-            text:"first one"
-        },
-        {
-            id:2,
-            text:"second"
-        },
-        {
-            id:3,
-            text:"some testing"
-        }
-    ]
     const [text, setText] = useState();
 
     const handleText = (event) => {
@@ -37,7 +22,7 @@ const CommentSection = (props) => {
         <div  style={{ padding: 14 }}>
             <Typography variant="h5">Comment Section</Typography>
             
-            {comments.map((comment) => {
+            {comments.length === 0 ? <div>No comments yet. Publish one!</div> : comments.map((comment) => {
                 return <CommentPaper key={comment._id} comment={comment} />
             })}
         </div>
