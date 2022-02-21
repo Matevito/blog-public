@@ -7,7 +7,7 @@ const FeaturedArticle = ({ article }) => {
     
     const redirectArticle = (event) => {
         event.preventDefault();
-        navigate(`article/${article._id}`)
+        navigate(`/article/${article._id}`)
     }
     return (
         <Grid item xs={12} md={6}>
