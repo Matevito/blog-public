@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Grid, Box, Divider } from "@mui/material"
 import DisplayedArticle from "../components/DisplayedArticle";
 import CommentSection from "../components/CommentSection";
@@ -7,6 +7,7 @@ import api from "../components/api";
 
 const Article = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [article, setArticle] = useState();
     const [comments, setComments] = useState();
 
@@ -22,6 +23,7 @@ const Article = () => {
         } catch (err) {
             console.log(err)
             // redirect to 404 page!
+            navigate("/")
         }
     }
     const getComments = async () => {
@@ -30,6 +32,8 @@ const Article = () => {
             setComments(commentsResponse.data.data)
         } catch (err) {
             console.log(err)
+            // redirect to 404 page!
+            navigate("/")
         }
     }
 
@@ -46,16 +50,15 @@ const Article = () => {
             <Grid container justifyContent="center" >
                 <Box
                             sx={{
-                                marginTop:8,
+                                marginTop:2,
                                 mx:"auto",
                                 display:"flex",
                                 flexDirection:"column",
-                                alignItems:"center",
-                                textAlign: "center"
                             }}
                 >
-                <Divider />
                 <DisplayedArticle article={article}/>
+                <Divider />
+                <p></p>
                 <CommentSection comments={comments}/>
                 </Box>
             </Grid>
