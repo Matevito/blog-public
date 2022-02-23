@@ -20,13 +20,7 @@ const Header = ({ title }) => {
                     {title}
                 </Link>
             </Typography>
-            <Button variant="outlined" size="small">
-                <Link to="/about" 
-                    style={{ color: "inherit", textDecoration: 'none' }}
-                >
-                    About
-                </Link>
-            </Button>
+            
         </Toolbar>
         </>
     )

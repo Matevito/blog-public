@@ -14,10 +14,11 @@ const ArticlePage = ({ article }) => {
         return <div>Loading post ...</div>
     } else {
         return (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={12}>
                 <CardActionArea component="a" href="#" onClick={redirectArticle}>
                 <Card sx={{ display: 'flex' }}>
                     <CardContent sx={{ flex: 1 }}>
+                        
                         <Typography
                             gutterBottom={true}
                             variant="subtitle1"
@@ -98,7 +99,7 @@ const AuthorInfo = () => {
                     <Divider />
 
                     <Typography
-                        
+                        component="h3" variant="h6"
                     >
                         Articles published: 
                     </Typography>
