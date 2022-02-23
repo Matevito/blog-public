@@ -18,7 +18,6 @@ const Home = () => {
             setArticles([])
         }
     }
-
     return (
         <Grid container spacing={4}>
         {articles.map(post => {
