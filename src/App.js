@@ -9,10 +9,9 @@ import AuthorInfo from "./routes/AuthorInfo";
 
 // title of the article
 const title = "Cuarto de los mil espejos"
-const PUBLIC_URL = "https://matevito.github.io/blog-public/"
 function App() {
   return (
-    <BrowserRouter basename={PUBLIC_URL}>
+    <BrowserRouter >
       <Container maxWidth="lg">
         <Header title={title}/>
         <Routes>
