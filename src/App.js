@@ -11,7 +11,7 @@ import AuthorInfo from "./routes/AuthorInfo";
 const title = "Cuarto de los mil espejos"
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/blog-public/">
       <Container maxWidth="lg">
         <Header title={title}/>
         <Routes>
