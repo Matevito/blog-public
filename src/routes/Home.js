@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Grid } from "@mui/material"
+import { Grid, Box } from "@mui/material"
 import FeaturedArticle from "../components/FeaturedArticle";
 import api from "../components/api";
 
@@ -19,12 +19,13 @@ const Home = () => {
         }
     }
     return (
-        <Grid container spacing={4}>
-        {articles.map(post => {
-            return <FeaturedArticle key={post._id} article={post}/>
-        })}
-        </Grid>
-        
+        <Box fullWidth sx={{height: "70vh"}}>
+            <Grid container spacing={4}>
+            {articles.map(post => {
+                return <FeaturedArticle key={post._id} article={post}/>
+            })}
+            </Grid>
+        </Box>
     )
 }
 
