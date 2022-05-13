@@ -5,11 +5,11 @@ Web app created with React.js that works as the front-ent of a personal blog. IT
 You can take a look to this app [here](https://matevito.github.io/blog-public/)
 # Technologies
 
-React.js
-Javascript
-HTML
-CSS
-[MUI](https://mui.com/)
+- React.js
+- Javascript
+- HTML
+- CSS
+- [MUI](https://mui.com/)
 
 # Installation
 Be sure that you already own Node.js and git on your computer. Then go to your terminal and do the following:
